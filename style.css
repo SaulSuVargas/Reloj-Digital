@@ -1,0 +1,279 @@
+/* FUENTE */
+@import url('https://fonts.googleapis.com/css2? family=Poppins:wght@400;500&display=swap');
+
+/* VARIABLES */
+:root {
+    /* COLORES*/
+    --matiz-color: 254; /* predterminado: 240 morado: 999 Azul 240 - Verde 154 - Anaranjado 25*/
+
+    --primer-color: hsl(var(--matiz-color), 53%, 49%);
+    --title-color: hsl(var(--matiz-color), 53%, 15%);
+    --text-color: hsl(var(--matiz-color), 12%, 35%);
+    --text-color-claro: hsl(var(--matiz-color), 12%, 65%);
+    --color-blanco: #fff;
+    --body-color: hsl(var(--matiz-color), 24%, 94%);
+
+    /* TIPOGRAFRIA*/
+    --body-fuente: 'Poppins', sans-serif;
+    --letra-grande: 3rem;
+    --letra-mediana: .813rem;
+    --letra-pequeña: .75rem;
+    --letra-tiny: .625rem;
+
+    /* MARGIN (BOTTOM) */
+    --mb-0: .25rem;
+    --mb-1: 1rem;
+    --mb-2: 1.5rem;
+    --mb-3: 2.5rem;
+}
+
+/* ADAPTACION PARA VENTANA PC*/
+@media screen and (min-width: 968px) {
+    :root {
+        --letra-grande: 3.5rem;
+        --letra-mediana: .875rem;
+        --letra-pequeña: .813rem;
+        --letra-tiny: .75rem;
+    }
+}
+
+/* SELECTOR UNIVERSAL*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-fuente);
+    color: var(--text-color);
+    transition: .4s;
+    background-color: var(--body-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CLASES */
+.container {
+    max-width: 969px;
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+}
+
+.grid {
+    display: grid;
+}
+
+/* clock */
+.clock_container {
+    height: 100vh;
+    grid-template-rows: 1fr max-content;
+}
+
+.clock_circulo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    box-shadow: -6px -6px 16px var(--color-blanco),
+                6px 6px 16px hsla(var(--matiz-color), 30%, 86%, 1),
+                inset 6px 6px 16px hsla(var(--matiz-color), 30%, 86%, 1),
+                inset -6px -6px 16px var(--color-blanco);
+    border-radius: 50%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock_contenido {
+    align-self: center;
+    row-gap: 3.5rem;
+}
+
+.clock_veinte,
+.clock_tres,
+.clock_seis,
+.clock_nueve {
+    position: absolute;
+    width: 1rem;
+    height: 1px;
+    background-color: var(--text-color-claro);
+}
+
+.clock_veinte,
+.clock_seis {
+    transform: translate(-50%) rotate(90deg);
+}
+
+.clock_veinte {
+    top: 1.25rem;
+    left: 50%;
+}
+
+.clock_tres {
+    top: 50%;
+    right: .75rem;
+}
+
+.clock_seis {
+    bottom: 1.25rem;
+    left: 50%;
+}
+
+.clock_nueve {
+    left: .75rem;
+    top: 50%;
+}
+
+.clock_redondo {
+    width: .75rem;
+    height: .75rem;
+    background-color: var(--primer-color);
+    border-radius: 50%;
+    border: 2px solid var(--body-color);
+    z-index: 10;
+}
+
+.clock_hour,
+.clock_minutes,
+.clock_seconds {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.clock_hour {
+    width: 105px;
+    height: 105px;
+}
+
+.clock_hour::before {
+    content: "";
+    position: absolute;
+    background-color: var(--text-color);
+    width: .25rem;
+    height: 3rem;
+    border-radius: .75rem;
+    z-index: 1;
+}
+
+.clock_minutes {
+    width: 136px;
+    height: 136px;
+}
+
+.clock_minutes::before {
+    content: "";
+    position: absolute;
+    background-color: var(--text-color);
+    width: .25rem;
+    height: 4rem;
+    border-radius: .75rem;
+    z-index: 1;
+}
+
+.clock_seconds {
+    width: 13px;
+    height: 130px;
+}
+
+.clock_seconds::before {
+    content: "";
+    position: absolute;
+    background-color: var(--primer-color);
+    width: .125rem;
+    height: 5rem;
+    border-radius: .75rem;
+    z-index: 1;
+}
+
+.clock_logo {
+    width: max-content;
+    justify-self: center;
+    margin-bottom: var(--mb-2);
+    font-size: var(--letra-pequeña);
+    font-weight: 500;
+    color: var(--text-color-claro);
+    transition: .3s;
+}
+
+.clock_logo:hover {
+    color: var(--primer-color);
+}
+
+.clock_text {
+    display: flex;
+    justify-content: center;
+}
+
+.clock_text-hour,
+.clock_text-minutes {
+    font-size: var(--letra-grande);
+    font-weight: 500;
+    color: var(--title-color);
+}
+
+.clock_text-ampm {
+    font-size: var(--letra-tiny);
+    color: var(--title-color);
+    font-weight: 500;
+    margin-left: var(--mb-0);
+}
+
+.clock_date {
+    text-align: center;
+    font-size: var(--letra-pequeña);
+    font-weight: 500;
+}
+
+/* VARIABLES DEL TEMA OSCURO*/
+body.dark-theme {
+    --title-color: hsl(var(--matiz-color), 12%, 95%);
+    --text-color: hsl(var(--matiz-color), 12%, 75%);
+    --body-color: hsl(var(--matiz-color), 10%, 16%);
+} 
+
+/* BOTON DE TEMA CLARO/OSCURO */
+.clock_theme {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    display: flex;
+    padding: .25rem;
+    border-radius: 50%;
+    box-shadow: inset -1px -1px 1px hsla(var(--matiz-color), 0%, 100%, 1),
+                inset 1px 1px 1px hsla(var(--matiz-color), 30%, 86%, 1);
+    color: var(--primer-color);
+    cursor: pointer;
+    transition: .4s;
+}
+
+/* SOMBRA DEL TEMA OSCURO*/
+.dark-theme .clock_circulo {
+    box-shadow: 6px 6px 16px hsla(var(--matiz-color), 8%, 12%, 1), 
+                -6px -6px 16px hsla(var(--matiz-color), 8%, 20%, 1), 
+                inset -6px -6px 16px hsla(var(--matiz-color), 8%, 20%, 1), 
+                inset 6px 6px 12px hsla(var(--matiz-color), 8%, 12%, 1);
+}
+  
+.dark-theme .clock_theme {
+    box-shadow: inset -1px -1px 1px hsla(var(--matiz-color), 8%, 20%, 1), 
+                inset 1px 1px 1px hsla(var(--matiz-color), 8%, 12%, 1);
+  }  
+
+
+/* MEDIA QUERIES (ADAPTACION DE VENTANAS MOBIL Y PC)*/
+/* Ventanas pc*/
+@media screen and (min-width: 968px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .clock_logo {
+        margin-bottom: 3rem;
+    }
+}

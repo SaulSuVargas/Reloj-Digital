@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="clock container">
+        <div class="clock_container grid">
+            <div class="clock_contenido grid">
+                <div class="clock_circulo">
+                    <span class="clock_veinte"></span>
+                    <span class="clock_tres"></span>
+                    <span class="clock_seis"></span>
+                    <span class="clock_nueve"></span>
+
+                    <div class="clock_redondo"></div>
+                    <div class="clock_hour" id="clock-hour"></div>
+                    <div class="clock_minutes" id="clock-minutes"></div>
+                    <div class="clock_seconds" id="clock-seconds"></div>
+
+                    <!-- ACTIVAR MODO OSCURO / CLARO -->
+                    <div class="clock_theme">
+                        <i class='bx bxs-moon' id="theme-button"></i>
+                    </div>
+                </div>
+            
+                <div>
+                    <div class="clock_text">
+                        <div class="clock_text-hour" id="text-hour"></div>
+                        <div class="clock_text-minutes" id="text-minutes"></div>
+                        <div class="clock_text-ampm" id="text-ampm"></div>
+                    </div>
+
+                    <div class="clock_date">
+                        <span id="date-day"></span>
+                        <span id="date-month"></span>
+                        <span id="date-year"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="https://www.instagram.com/saulsuvargas/" target="_blank" class="clock_logo">SaulSu</a>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- SCRIPT -->
+    <script src="main.js"></script>
+</body>
+</html>
